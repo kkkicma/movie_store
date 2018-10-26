@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-xl fixed-top navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="/">Movie Store</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse"  id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/search">Search</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/static_about">About</a>
+            </li>
+        </ul>    
+    </div>    
+</nav>
+
+<br />
+<br />
+<br />
+
+<div class="container">
+ <h2>About</h2>
+  <%= image_tag("Movie_Store.png", :alt => "Movie_Store", :class => "thumbnail")%>
+  <br />
+  <br />
+  <p class="p_text">
+    The database structure displays by the ERD picture. Every movie has the price and the number of storages, also customer can rent the movie from the movie store. Customers can have many rental info; every rental info belong to the customer. 
+  </p>
+  <p class="p_text">
+   The data of movie is from the CSV file, call “MovieGenre.csv”, others is from faker.
+  </p>
+</div> 

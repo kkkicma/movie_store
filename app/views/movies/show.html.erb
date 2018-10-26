@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-xl fixed-top navbar-dark bg-dark">
+
+    <a class="navbar-brand" href="/">Movie Store</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse"  id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/search">Search</a>
+            </li>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/static_about">About</a>
+            </li>
+        </ul>
+    </div>    
+</nav>
+
+<br />
+<br />
+<br />
+<div class="container">
+<p id="notice"></p>
+
+<div class="row">
+  <div class="col-12 col-sm-6">
+   <img class="img-fluid" src="<%= @movie.poster%>">
+  </div> 
+  
+  <div class="col">
+   <h2><%= @movie.title%></h2>
+   <p>
+    <strong>Genre: </strong>
+    <%=@movie.genre%>
+   </p>
+
+   <p>
+    <strong>IMDB ID: </strong>
+    <%=@movie.imdb_id%>
+   </p>
+
+   <p>
+    <strong>IMDB Score: </strong>
+    <%=@movie.imdb_score%>
+   </p>
+
+   <p>
+    <strong>IMDB Link: </strong>
+    <a href="<%=@movie.imdb_link%>"><%=@movie.imdb_link%></a>
+   </p>
+
+   <% @movie.storage.each do |s| %> 
+   <p>
+    <strong>Price: </strong>
+     $<%= s.price%>
+   </p>
+
+   <p>
+    <strong>Stock Quantity: </strong>
+    <%= s.stock_quantity %>
+   </p> 
+   <% end %>
+  </div>
+
+<br />
+<br />
+  <table class="table">
+   <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone Number</th>
+    <th>Email</th>
+    <th>Rental Date</th>
+   </tr>
+  
+  <% @movie.rental.each do |r| %>
+  <% r.customer.each do |c| %>
+   <tr>
+    <td><%= c.name %></td>
+    <td><%= c.address %></td>
+    <td><%= c.phone_num %></td>
+    <td><%= c.email %></td>
+    <td><%= r.rental_date%></td>
+   </tr>
+  <% end %>
+  <% end %>
+  </table>
+</div>  

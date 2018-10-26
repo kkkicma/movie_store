@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  imdb_id: MyString
+  imdb_link: MyString
+  title: MyString
+  imdb_score: 9.99
+  genre: MyString
+  poster: MyString
+
+two:
+  imdb_id: MyString
+  imdb_link: MyString
+  title: MyString
+  imdb_score: 9.99
+  genre: MyString
+  poster: MyString
